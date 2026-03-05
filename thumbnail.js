@@ -1,5 +1,5 @@
 const bgImage = new Image();
-bgImage.src = 'assets/images/background.png'; // Path to your new file
+bgImage.src = 'assets/images/BSSModdedThumbnail (1).png'; 
 
-// Inside the game's "draw" or "render" function:
+
 ctx.drawImage(bgImage, 0, 0, 1920, 1080); 
