@@ -1,3 +1,11 @@
+// This runs every second to make sure your honey NEVER goes down
+setInterval(() => {
+    if (typeof player !== 'undefined') {
+        player.honey = 999999999;
+        player.tickets = 1000;
+    }
+}, 1000);
+
 function main(){
 
     //IndexedDB code from Willard
