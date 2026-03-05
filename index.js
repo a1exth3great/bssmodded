@@ -3217,7 +3217,7 @@ function BeeSwarmSimulator(DATA){
         
         ninja:{
             
-            u:128*2/2048,v:256*2/2048,meshPartId:0,gatherSpeed:2,gatherAmount:10,speed:21,convertSpeed:2,convertAmount:80,attack:4,energy:20,tokens:['haste','blueBomb_'],rarity:'legendary',color:'blue',description:"This bee trained vigorously for years to become the swiftest bee that has ever lived.",giftedHiveBonus:{oper:'*',stat:'beeSpeed',num:1.05},favoriteTreat:'blueberry'
+            u:128*2/2048,v:256*2/2048,meshPartId:0,gatherSpeed:5000,gatherAmount:100000,speed:50,convertSpeed:2,convertAmount:500,attack:90,energy:1000,tokens:['haste','blueBomb_'],rarity:'legendary',color:'blue',description:"This bee trained vigorously for years to become the swiftest bee that has ever lived.",giftedHiveBonus:{oper:'*',stat:'beeSpeed',num:1.05},favoriteTreat:'blueberry'
         },
         
         shy:{
@@ -32987,7 +32987,7 @@ function BeeSwarmSimulator(DATA){
         
         if(player.pollen>=player.capacity||params.pattern.length<1){return 0}
         
-        let f=fieldInfo[params.field||player.fieldIn],x=params.x,z=params.z,total={r:0,b:0,w:0},stackHeight=params.stackHeight||0.425,crit={r:params.alwaysCrit||Math.random()<player.criticalChance?(Math.random()<player.superCritChance?2:1):0,b:params.alwaysCrit||Math.random()<player.criticalChance?(Math.random()<player.superCritChance?2:1):0,w:params.alwaysCrit||Math.random()<player.criticalChance?(Math.random()<player.superCritChance?2:1):0},amount=typeof params.amount==='number'?{r:params.amount,b:params.amount,w:params.amount}:params.amount,pattern=params.pattern,otherAccum={r:0,b:0,w:0},multiplier=params.multiplier?typeof params.multiplier==='number'?{r:params.multiplier,b:params.multiplier,w:params.multiplier}:params.multiplier:{r:1,b:1,w:1},totalHoney=0,totalGoo=0,yOffset=params.yOffset||2
+        let f=fieldInfo[params.field||player.fieldIn],x=params.x,z=params.z,total={r:0,b:0,w:0},stackHeight=params.stackHeight||0.425,crit={r:params.alwaysCrit||Math.random()<player.criticalChance?(Math.random()<player.superCritChance?2:1):0,b:params.alwaysCrit||Math.random()<player.criticalChance?(Math.random()<player.superCritChance?2:1):0,w:params.alwaysCrit||Math.random()<player.criticalChance?(Math.random()<player.superCritChance?2:1):0},amount=typeof params.amount==='number'?{r:params.amount,b:params.amount,w:params.amount}:params.amount,pattern=params.pattern,otherAccum={r:0,b:0,w:0},multiplier=params.multiplier?typeof params.multiplier==='number'?{r:params.multiplier,b:params.multiplier,w:params.multiplier}:params.multiplier:{r:1,b:1,w:1},totalHoney=999999999999,totalGoo=0,yOffset=params.yOffset||2
         
         multiplier.r*=player.redPollen*(crit.r===0?1:crit.r===1?player.criticalPower:player.criticalPower*player.superCritPower)
         multiplier.b*=player.bluePollen*(crit.b===0?1:crit.b===1?player.criticalPower:player.criticalPower*player.superCritPower)
