@@ -1,10 +1,4 @@
-// This runs every second to make sure your honey NEVER goes down
-setInterval(() => {
-    if (typeof player !== 'undefined') {
-        player.honey = 999999999;
-        player.tickets = 1000;
-    }
-}, 1000);
+
 
 function main(){
 
@@ -263,7 +257,7 @@ function main(){
     
                 let lastSavedDate=`${(date.getMonth()+1).toString().padStart(2,'0')}/${date.getDate().toString().padStart(2,'0')}/${date.getFullYear()}&nbsp;&nbsp;${(dgh>=12?dgh-12:dgh).toString().padStart(2,'0').replace('00','12')}:${date.getMinutes().toString().padStart(2,'0')}:${date.getSeconds().toString().padStart(2,'0')} ${dgh>=12?'PM':'AM'}`
     
-                div.innerHTML="<input id='saveName"+i+"' style='margin-top:3px;margin-left:3px;font-size:22px;background-color:rgb(0,0,0,0);border:none;font-family:comic sans ms;padding-left:4px;padding-bottom:5px;background-color:rgb(0,0,0,0.1)' spellcheck='false' size='17' value='"+res[i].data.name+"' onchange='window.renameSave("+i+")'><div style='margin-top:7px;margin-left:5px;font-size:14px;color:rgb(60,60,60)'>Last Saved: "+lastSavedDate+"</div><div style='margin-left:460px;margin-top:-25px;width:52px;height:27px;transform:translate(-50%,-50%);background-color:rgb(210,50,50);border-radius:4px;border:2px solid black;text-align:center;font-size:16px;cursor:pointer' onclick='window.deleteSave("+i+")'>Delete</div><div style='margin-left:395px;margin-top:-31px;width:52px;height:27px;transform:translate(-50%,-50%);background-color:rgb(195,100,255);border-radius:4px;border:2px solid black;text-align:center;font-size:16px;cursor:pointer' onclick='window.getSave("+i+")'>Export</div><div style='margin-left:330px;margin-top:-31px;width:52px;height:27px;transform:translate(-50%,-50%);background-color:rgb(50,210,50);border-radius:4px;border:2px solid black;text-align:center;font-size:16px;cursor:pointer' onclick='window.initSave("+i+")'>Play</div>"
+                div.innerHTML="<input id='saveName"+i+"' style='margin-top:3px;margin-left:3px;font-size:22px;background-color:rgb(0,0,0,0);border:none;font-family:comic sans ms;padding-left:4px;padding-bottom:5px;background-color:rgb(0,0,0,0.1)' spellcheck='false' size='17' value='"+res[i].data.name+"' onchange='window.renameSave("+i+")'><div style='margin-top:7px;margin-left:5px;font-size:14px;color:rgb(60,60,60)'>Last Saved: "+lastSavedDate+"</div><div style='margin-left:460px;margin-top:-25px;width:52px;height:27px;transform:translate(-50%,-50%);background-color:rgb(255,255,255);border-radius:4px;border:2px solid #8e44ad;text-align:center;font-size:16px;cursor:pointer' onclick='window.deleteSave("+i+")'>Delete</div><div style='margin-left:395px;margin-top:-31px;width:52px;height:27px;transform:translate(-50%,-50%);background-color:rgb(195,100,255);border-radius:4px;border:2px solid black;text-align:center;font-size:16px;cursor:pointer' onclick='window.getSave("+i+")'>Export</div><div style='margin-left:330px;margin-top:-31px;width:52px;height:27px;transform:translate(-50%,-50%);background-color:rgb(50,210,50);border-radius:4px;border:2px solid black;text-align:center;font-size:16px;cursor:pointer' onclick='window.initSave("+i+")'>Play</div>"
     
                 document.getElementById('savedGames').appendChild(div)
             }
@@ -302,7 +296,7 @@ function main(){
 
 var _M=Math
 
-function BeeSwarmSimulator(DATA){
+function BeeSwarmSimulator(DATA)}
 
     let Math=_M,width=window.thisProgramIsInFullScreen?500:window.innerWidth+1,height=window.thisProgramIsInFullScreen?500:window.innerHeight+1,half_width=width*0.5,half_height=height*0.5,aspect=width/height,FETCHED_CODE={},beeCanvas,UPDATE_FLOWER_MESH=true,GIFTED_BEE_TEXTURE_OFFSET=768/2048
 
@@ -1440,7 +1434,7 @@ function BeeSwarmSimulator(DATA){
 
                 } else {
 
-                    player.addMessage('🌙 The moon seems happy! 🌙')
+                    player.addMessage('🌙 The moon seems lowk happy af! 🌙')
                 }
 
                 amulet.push(('*'+Math.min(1+player.stats.moonAmulets*0.02,1.5).toFixed(2)+' capacityMultiplier').replace('0 ',' '),('*'+Math.min(1+player.stats.moonAmulets*0.03,1.75).toFixed(2)+' convertRate'))
@@ -34766,4 +34760,14 @@ function BeeSwarmSimulator(DATA){
         window.objects=objects
     }
     
-}
+
+window.addEventListener('load', () => {
+    console.log("Mod script active...");
+    setInterval(() => {
+       
+        if (typeof player !== 'undefined') {
+            player.honey = 999999999;
+            player.tickets = 1000;
+        }
+    }, 1000);
+});
